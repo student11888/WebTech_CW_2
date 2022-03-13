@@ -1,0 +1,22 @@
+extends base
+block content 
+    .container-students 
+        table.table.table-striped.table-light.table-hover 
+            thead
+                tr
+                    th(scope='col') №
+                    th(scope='col') First name
+                    th(scope='col') Last name
+                    th.text-center(scope='col') Operations
+            tbody 
+                each student, index in students 
+                    tr.list-item 
+                        th(scope='row')= index  + 1
+                        td= student.firstName
+                        td= student.lastName
+                        td.text-center 
+                            button.btn.btn-success.mx-3.edit(data-id=index) 
+                                a(href=`/students/${index}/edit`) 
+                                    i.bi.bi-pen
+                            button.btn.btn-danger.delete(type='submit' data-id=index)
+                                i.bi.bi-x-circle

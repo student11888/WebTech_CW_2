@@ -1,0 +1,27 @@
+extends base
+block content
+    .container-content.bg-light
+        form.form-create(action='/create-record' method='POST')
+            h2.text-center.fw-bold.text-primary Create
+            .row.mb-4
+                .col
+                    .form-outline
+                        label.form-label(for='firstname') First name
+                        input#firstname.form-control(type='text' name='firstName')
+                .col
+                    .form-outline
+                        label.form-label(for='lastname') Last name
+                        input#lastname.form-control(type='text' name='lastName')
+            .form-outline.mb-4
+                label.form-label(for='address') Address
+                input#address.form-control(type='text' name='address')
+            // Email input
+            .form-outline.mb-4
+                label.form-label(for='email') Email
+                input#email.form-control(type='email' name='email')
+            // Number input
+            .form-outline.mb-4
+                label.form-label(for='phone') Student ID
+                input#phone.form-control(type='number' name='studentID')
+            // Submit button
+            button.btn.btn-primary.btn-block.mb-4(type='submit') Create
