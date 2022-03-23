@@ -22,7 +22,7 @@ let Student = db.define(
       type: DataTypes.STRING,
     },
     email: {
-      type: DataTypes.STRING,
+      type: DataTypes.CHAR,
     },
   },
   {

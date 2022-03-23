@@ -1,10 +1,15 @@
 body {
   font-family: 'Ubuntu' !important;
+  min-height: 100vh;
+  padding: 50px 0;
+  background-image: url('../img/Polygon\ Luminary.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .application {
   width: 80%;
-  margin: 50px auto;
+  margin: 0 auto;
   border-radius: 20px;
   box-shadow: 0px 0px 20px #e3f2fd;
   overflow: hidden;
@@ -16,7 +21,7 @@ body {
 }
 
 .container-students {
-  max-height: 500px;
+  max-height: 70vh;
   overflow-y: scroll;
 }
 
@@ -34,6 +39,11 @@ i {
   padding-top: 30px;
   display: flex;
 }
+
+.container-control {
+  height: 70vh;
+}
+
 /* 
 .modal {
   background-color: rgba(0, 0, 0, 0.5);

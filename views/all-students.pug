@@ -15,8 +15,9 @@ block content
                         td= student.firstName
                         td= student.lastName
                         td.text-center 
-                            button.btn.btn-success.mx-3.edit(data-id=index) 
-                                a(href=`/students/${index}/edit`) 
+                            button.btn.btn-success.mx-3.edit
+                                a(href=`/update/${student.id}`) 
                                     i.bi.bi-pen
-                            button.btn.btn-danger.delete(type='submit' data-id=index)
-                                i.bi.bi-x-circle
+                            button.btn.btn-danger.delete
+                                a(href=`/delete/${student.id}`) 
+                                    i.bi.bi-x-circle
