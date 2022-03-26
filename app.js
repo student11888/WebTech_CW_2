@@ -10,7 +10,6 @@ let Student = require('./model');
 // Routes
 const homeRouter = require('./routes/homeRoute');
 const studentsRoute = require('./routes/studentsRoute');
-const createFormRoute = require('./routes/createRoute');
 const urlEncodedParser = bodyParser.urlencoded({ extended: false });
 db.sync().then(() => 'DB initted...');
 
@@ -18,9 +17,7 @@ app.use('/static', express.static('public'));
 app.set('view engine', 'pug');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(
-  session({ secret: 'webtech', saveUninitialized: false, resave: false })
-);
+app.use(session({ secret: 'webtech', saveUninitialized: false, resave: true }));
 app.use(morgan('short'));
 
 app.use('/', homeRouter);
@@ -79,7 +76,7 @@ app.get('/update/:id', async (req, res) => {
   res.render('add', { student: student });
 });
 
-app.post('/update-record/:id', async (req, res) => {
+app.post('/update/:id', async (req, res) => {
   const id = req.params.id;
   const updatedStudent = await Student.update(
     {

@@ -21,7 +21,7 @@ body {
 }
 
 .container-students {
-  max-height: 70vh;
+  height: 70vh;
   overflow-y: scroll;
 }
 
@@ -35,6 +35,10 @@ i {
   color: #ffffff;
 }
 
+.active,
+.active i {
+  color: #ffffff !important;
+}
 .container-content {
   padding-top: 30px;
   display: flex;
@@ -44,6 +48,17 @@ i {
   height: 70vh;
 }
 
+.alert-update {
+  position: absolute !important;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -300%);
+  transition: transform 0.6s ease;
+}
+
+.alert-update.show {
+  transform: translate(-50%, 50%);
+}
 /* 
 .modal {
   background-color: rgba(0, 0, 0, 0.5);

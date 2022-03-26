@@ -1,11 +1,30 @@
 const nav = document.querySelector('.nav');
 const menuItems = document.querySelectorAll('.nav-link');
+const alert = document.querySelector('.alert-update');
 
-nav.addEventListener('click', (e) => {
-  const btn = e.target.closest('.nav-link');
-  for (let item in menuItems) {
-    item.classList.remove('active');
+function docReady(fn) {
+  // see if DOM is already available
+  if (
+    document.readyState === 'complete' ||
+    document.readyState === 'interactive'
+  ) {
+    // call on next available tick
+    setTimeout(fn, 1);
+  } else {
+    document.addEventListener('DOMContentLoaded', fn);
   }
-  btn.classList.add('active');
-  console.log(btn);
+}
+
+docReady(() => {
+  let url = window.location.pathname;
+  // Will only work if string in href matches with location
+  document
+    .querySelector('ul.nav a[href="' + url + '"]')
+    .classList.add('active');
 });
+
+if (alert != undefined) {
+  setTimeout(() => {
+    alert.classList.remove('show');
+  }, 3000);
+}
