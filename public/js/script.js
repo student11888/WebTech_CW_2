@@ -1,7 +1,7 @@
 const nav = document.querySelector('.nav');
 const menuItems = document.querySelectorAll('.nav-link');
 const alert = document.querySelector('.alert-update');
-
+const test = 'testing';
 function docReady(fn) {
   // see if DOM is already available
   if (
