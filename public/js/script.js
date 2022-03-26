@@ -1,7 +1,7 @@
 const nav = document.querySelector('.nav');
 const menuItems = document.querySelectorAll('.nav-link');
 const alert = document.querySelector('.alert-update');
-const test = 'testing';
+const searchInput = document.querySelector('.input-search');
 function docReady(fn) {
   // see if DOM is already available
   if (
@@ -23,8 +23,17 @@ docReady(() => {
     .classList.add('active');
 });
 
+////
 if (alert != undefined) {
   setTimeout(() => {
     alert.classList.remove('show');
   }, 3000);
 }
+/// Search
+searchInput.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  await fetch(`/all-students?search=${e.target.value}`, {
+    method: 'POST',
+  });
+  console.log(e.target.value);
+});

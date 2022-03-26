@@ -14,7 +14,13 @@ html(lang="en")
     body 
         section.application.border
             include includes/legal.pug
-            include includes/nav.pug
+            nav.navbar.navbar-expand-lg.bg-light.border-bottom.border-top
+                .container-fluid
+                    a.navbar-brand.fs-2.text-primary(href='/') Student Record System 
+                    if (title === "All records")
+                        #navbarSupportedContent.fs-3
+                            form(method = "GET" action='/all-students?').d-flex
+                                input.form-control.me-2.input-search(type='search' placeholder='Search' aria-label='Search')
             main.main
                 .d-flex.flex-column.flex-shrink-0.p-3.bg-light.border-end
                     ul.nav.nav-pills.flex-column.mb-auto
@@ -31,4 +37,5 @@ html(lang="en")
                                 i.bi.bi-person-plus.text-primary.me-2
                                 |           Create
                     hr
+                    p.text-center.m-0 --- 00011888 ---
                 block content

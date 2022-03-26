@@ -2,16 +2,14 @@ body {
   font-family: 'Ubuntu' !important;
   min-height: 100vh;
   padding: 50px 0;
-  background-image: url('../img/Polygon\ Luminary.svg');
-  background-size: cover;
-  background-repeat: no-repeat;
+  background-color: #edf2fb;
 }
 
 .application {
   width: 80%;
   margin: 0 auto;
   border-radius: 20px;
-  box-shadow: 0px 0px 20px #e3f2fd;
+  box-shadow: 0px 0px 10px #2b2b2b;
   overflow: hidden;
 }
 

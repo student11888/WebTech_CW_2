@@ -72,7 +72,12 @@ app.post(
 
 app.get('/update/:id', async (req, res) => {
   const id = req.params.id;
-  const student = await Student.findOne({ where: { id: id } });
+  const student = await Student.findOne({
+    where: {
+      id: id,
+      LIKE: '%' + id + '%',
+    },
+  });
   res.render('add', { student: student });
 });
 
