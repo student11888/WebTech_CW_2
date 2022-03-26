@@ -14,7 +14,7 @@ function docReady(fn) {
     document.addEventListener('DOMContentLoaded', fn);
   }
 }
-
+// Test if element has a certain class
 docReady(() => {
   let url = window.location.pathname;
   // Will only work if string in href matches with location
