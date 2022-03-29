@@ -3,37 +3,42 @@ block content
     .container-students 
         if (updated)
             .alert.show.alert-success.alert-update(role='alert') ✅ Success | Your work saved successfully
+        if (error) 
+            p.error.text-center No search results
+        if (deleted) 
+             .alert.show.alert-success.alert-update(role='alert') ✅ Deleted | Record is deleted
         table.table.table-striped.table-light.table-hover 
-            thead
-                tr
-                    th(scope='col') №
-                    th(scope='col') First name
-                    th(scope='col') Last name
-                    th(scope='col') Student ID
-                    th.text-center(scope='col') Operations
-            tbody 
-                each student, index in students 
-                    tr.list-item 
-                        th(scope='row')= index  + 1
-                        td= student.firstName
-                        td= student.lastName
-                        td= student.studentID
-                        td.text-center 
-                            button.btn.btn-success.mx-3.edit
-                                a(href=`/update/${student.id}`) 
-                                    i.bi.bi-pen
-                            button.btn.btn-danger(type='button')
-                                a(href=`/delete/${student.id}` onclick="return confirm('Are you sure you want to delete this item?');").link-light
-                                    i.bi.bi-x-circle
-                            #deleteModal.modal.fade(tabindex='-1' aria-labelledby='deleteModalLabel' aria-hidden='true')
-                                .modal-dialog
-                                    .modal-content
-                                        .modal-header
-                                            h5#deleteModalLabel.modal-title ⚠️ Warning 
-                                            button.btn-close(type='button' data-bs-dismiss='modal' aria-label='Close')
-                                        .modal-body
-                                            p Are you sure to delete this record? If you delete, it will be deleted from database!!! #{student.id}
-                                        .modal-footer
-                                            button.btn.btn-secondary(type='button' data-bs-dismiss='modal') Close
-                                            button.btn.btn-danger
-                                                a(href=`/delete/${student.id}`).link-light Delete
+            if (students)    
+                thead
+                    tr
+                        th(scope='col') №
+                        th(scope='col') First name
+                        th(scope='col') Last name
+                        th(scope='col') Student ID
+                        th.text-center(scope='col') Operations
+                tbody 
+                    each student, index in students 
+                        tr.list-item 
+                            th(scope='row')= index  + 1
+                            td= student.firstName
+                            td= student.lastName
+                            td= student.studentID
+                            td.text-center 
+                                button.btn.btn-success.mx-3.edit
+                                    a(href=`/update/${student.id}`) 
+                                        i.bi.bi-pen
+                                button.btn.btn-danger(type='button')
+                                    a(href=`/delete/${student.id}` onclick="return confirm('Are you sure you want to delete this item?');").link-light
+                                        i.bi.bi-x-circle
+                                #deleteModal.modal.fade(tabindex='-1' aria-labelledby='deleteModalLabel' aria-hidden='true')
+                                    .modal-dialog
+                                        .modal-content
+                                            .modal-header
+                                                h5#deleteModalLabel.modal-title ⚠️ Warning 
+                                                button.btn-close(type='button' data-bs-dismiss='modal' aria-label='Close')
+                                            .modal-body
+                                                p Are you sure to delete this record? If you delete, it will be deleted from database!!! #{student.id}
+                                            .modal-footer
+                                                button.btn.btn-secondary(type='button' data-bs-dismiss='modal') Close
+                                                button.btn.btn-danger
+                                                    a(href=`/delete/${student.id}`).link-light Delete

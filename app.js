@@ -1,4 +1,6 @@
 const express = require('express');
+const { Op } = require('sequelize');
+
 const app = express();
 const morgan = require('morgan');
 const db = require('./database');
@@ -10,6 +12,7 @@ let Student = require('./model');
 // Routes
 const homeRouter = require('./routes/homeRoute');
 const studentsRoute = require('./routes/studentsRoute');
+const { searchController } = require('./controllers/searchController');
 const urlEncodedParser = bodyParser.urlencoded({ extended: false });
 db.sync().then(() => 'DB initted...');
 
@@ -22,6 +25,7 @@ app.use(morgan('short'));
 
 app.use('/', homeRouter);
 app.use('/all-students', studentsRoute);
+app.get('/all-students/search', searchController);
 
 app.get('/create', (req, res) => {
   res.render('add', {
@@ -75,7 +79,6 @@ app.get('/update/:id', async (req, res) => {
   const student = await Student.findOne({
     where: {
       id: id,
-      LIKE: '%' + id + '%',
     },
   });
   res.render('add', { student: student });
@@ -103,7 +106,7 @@ app.post('/update/:id', async (req, res) => {
 app.get('/delete/:id', async (req, res) => {
   const id = req.params.id;
   const updatedList = Student.destroy({ where: { id: id } });
-  res.redirect('/?deleted=true');
+  res.redirect('/all-students?deleted=true');
 });
 
 const PORT = process.env.PORT || 3333;
