@@ -24,6 +24,7 @@
     "express": "^4.17.3",
     "express-session": "^1.17.2",
     "express-validator": "^6.14.0",
+    "markdown-notes-tree": "^1.12.0",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.15",
     "pug": "^3.0.2",
