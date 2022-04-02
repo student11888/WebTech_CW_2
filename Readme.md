@@ -42,47 +42,97 @@ Your app should now be running on localhost:3333.
 
 ## Project Structure
 
-```sh
-project
-|
-└───controllers
-│   │   homeController.js
-│   │   searchController.js
-|   |   studentsController.js
-|
-|___public
-|   │
-|   │___js
-|   |   |   script.js
-|   |
-|   |___styles
-|   |   |   style.css
-|   |
-|   |   Preview.png
-|
-|___routes
-|   |   homeRoute.js
-|   |   studentsRoute.js
-|
-|___views
-|   |
-|   |___includes
-|   |   |   legal.pug
-|   |
-|   |   add.pug
-|   |   all-students.pug
-|   |   base.pug
-|   |   home.pug
-|
-|___.gitignore
-|___app.js
-|___database.js
-|___db.sqlite3
-|___model.js
-|___package-lock.json
-|___package.json
-|___Readme.md
-```
+<table>
+  <thead>
+    <tr>
+      <th>File name</th>
+      <th>Description of file or folder</th>
+    </tr>
+  </thead>
+  <tbody>
+     <tr>
+      <td>/Web_Tech_CW_2</td>
+      <td>Application root folder</td>
+    </tr>
+    <tr>
+      <td>app.js</td>
+      <td>File for server configuration</td>
+    </tr>
+    <tr>
+      <td>model.js</td>
+      <td>Model for sqlite database</td>
+    </tr>
+    <tr>
+      <td>database.js</td>
+      <td>Configure sequelize</td>
+    </tr>
+    <tr>
+      <td>db.sqlite3</td>
+      <td>Generated database file</td>
+    </tr>
+    <tr>
+      <td>package.json</td>
+      <td>Project configuration for npm</td>
+    </tr>
+    <tr>
+      <td>.gitignore</td>
+      <td>File for list of ignored files for git </td>
+    </tr>
+    <tr>
+      <td>Readme.md</td>
+      <td>Readme file for project</td>
+    </tr>
+    <tr>
+      <td>/node_modules</td>
+      <td>All library and third party packages</td>
+    </tr>
+    <tr>
+      <td>/public 
+        <pre>/js
+    /script.js
+/styles
+    /style.css
+        </pre>
+      </td>
+      <td> 
+        Folder is for keeping files essential for building user-interface
+    </td>
+    </tr>
+    <tr>
+      <td>/routes
+      <pre>
+homeRoute.js
+studentRoute.js
+      </pre>
+      </td>
+      <td>Files for controlling routes</td>
+    </tr>
+    <tr>
+     <tr>
+      <td>/controllers
+      <pre>
+homeController.js
+studentController.js
+searchController.js
+      </pre>
+      </td>
+      <td>Files for controlling routes</td>
+    </tr>
+    <tr>
+      <td>/views
+      <pre>
+/includes
+    legal.pug
+add.pug
+all-students.pug
+base.pug
+home.pug
+      </pre>
+      </td>
+      <td>Pug js files for application interface</td>
+    </tr>
+  </tbody>
+</table>
 
 ## Deployment
 
