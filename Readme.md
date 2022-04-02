@@ -5,6 +5,8 @@ with node.js and express.js. The user interface is designed simply and easy to u
 
 ![Preview](./public/Preview.png)
 
+> ⚠️ Clarification: In the contributors section, there are two contributors, however, both of accounts belongs to me. 
+> When push my work I pushed it from my personal account by chance. Please do not think this is collaboration, it is a mistake.
 ## Features
 
 - Create new record and save it in database
